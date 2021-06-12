@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Home | Cartoon Network</title>
+    <style>
+        *{
+            font-family: 'Montserrat', sans-serif;
+            border: 0;
+            margin: 0;
+            padding: 0;
+            
+        }
+        .header{
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding-top: 30px;
+            padding-left: 150px;
+           
+
+        }
+        .header img{
+            width: 100px;
+            padding: 25px;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: black;
+            padding: 12px;
+            font-size: large;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-family: 'Montserrat', sans-serif;
+            position: relative;
+        }
+        .nav a:hover{
+           transition: 1.9s;
+           
+
+        
+        }
+        .nav a::after{
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%) scaleX(0);
+            -webkit-transform: translateX(-50%) scaleX(0);
+            -webkit-transform-origin:50% 50%;
+            transform-origin: 50% 50%;
+            width: 100%;
+            height: 5px;
+            background-color:orchid;
+            transition: transform 450ms;
+            -webkit-transition: transform 450ms;
+
+
+        }
+        .nav a:hover::after{
+            transform: translatex(-50%) scaleX(1);
+            -webkit-transform: translatex(-50%) scaleX(1);}
+
+        
+        .body{
+            display: grid;
+           
+            align-items: center;
+            
+        }
+        .container{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            row-gap: 50px;
+            flex-wrap: wrap;
+            justify-content: center;
+            column-gap: 15px;
+            color: white;
+            background-color: black;
+            
+        }
+        .container2{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            row-gap: 50px;
+            flex-wrap: wrap;
+            justify-content: center;
+            column-gap: 10px;
+            color: white;
+            padding-right: 13px;
+            
+        }
+        .card{
+            display: grid;
+            grid-template-columns: 400px;
+            grid-template-rows: 400px;
+            transition: 50ms;
+            padding-top: 10px;
+            
+        }
+        .card2{
+            display: grid;
+
+            transition: 50ms;
+            padding-top: 9px;
+
+        }
+        .image{
+            background-color: rgb(29, 28, 28);
+        }
+ 
+
+        .name{
+            position: absolute;
+            bottom: 0px;
+            padding-left: 15px;
+            color: rgb(255, 255, 255);
+            padding-bottom: 10px;
+            text-transform: uppercase;
+            font-weight: bold;
+            background-color: rgba(0, 0, 0, 0.123);
+            width: 100%;
+        }
+        .name p {
+            font-weight: lighter;
+            font-size: small;
+            text-transform: none;
+        }
+        .heading{
+            color: white;
+            text-transform: uppercase;
+            font-weight: 600;
+            padding-top: 50px;
+            padding-left: 185px;
+        }
+        .image{
+            width: 400px;
+            height: 380px;
+            overflow: hidden;
+            transition: 50ms ease-in-out;
+            position: relative;
+        }
+        .image :hover{
+            opacity: 95%;
+            cursor: pointer;
+            transform: scale(1.02);
+            transition: 300ms ease-in-out;
+        }
+        .image2 {
+            width: 300px;
+            height: 300px;
+            transition: 50ms ease-in-out;
+            overflow: hidden;
+            position: relative;
+        }
+        .image2 :hover{
+            cursor: pointer;
+            opacity: 93%;
+            transform: scale(1.02);
+            transition: 300ms ease-in-out;
+            
+        }
+       
+        .about{
+            color: white;
+            padding: 10px;
+        }
+        .about h1{
+            text-transform: uppercase;
+            font-size: 150%;
+        }
+        .about p{
+            font-size: 100%;
+        }
+      @media screen and (max-width:550px) {
+        .image{
+            width: 107%;
+            height: 95%;
+            overflow: hidden;
+            transition: 50ms ease-in-out;
+            position: relative;
+        }
+        .image :hover{
+            opacity: 95%;
+            cursor: pointer;
+            transform: scale(1.07);
+            transition: 300ms ease-in-out;
+        }
+        .container{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            row-gap: 50px;
+            flex-wrap: wrap;
+            justify-content: center;
+            column-gap: 10px;
+            color: white;
+            padding-right: 13px;
+            background-color: black;
+        }
+        .nav  a{
+            display: none;
+            font-size: 0.00%;
+        }
+        .body{
+            display: grid;
+            
+            align-items: center;}
+        html{
+            width: 100%;
+            height: 100%;
+        }
+          
+      }
+      
+      
+      /* mobile nav  */
+      @media screen and (min-width: 980px){
+        #home{display: none;}
+       
+       }
+       @media screen and (max-width: 980px){
+        .nav a{
+            display: none;
+        }
+       #home{
+           font-size: 19px;
+           font-family: Arial, Helvetica, sans-serif;
+           display: inline-block;
+       }
+       #home a{
+        color:black;
+       }
+       #home a:hover{
+           color:rgb(0, 0, 0);
+       }
+       #btn{
+           background-color: white;
+           border:white;
+           padding:10px;
+           font-size: 16px;
+       }
+       #btn:hover{
+           color:deepskyblue;
+           cursor: pointer;
+      }
+       .mobilenav{
+           background-color: #ffffff;
+           top:0;
+           left:0;
+           position:fixed;
+           z-index: 1;
+           width:0;
+           height:300px;
+           overflow-x: hidden;
+           transition: all .5s;
+       }
+       .mobilenav-content{
+           position: relative;
+           top:15%;
+           background-color: rgb(255, 255, 255);
+           margin-top: 15px;
+           text-align: left;
+           padding:14px;
+           width:100%;
+       }
+       .mobilenav-content a{
+           border-bottom:1px solid rgb(255, 255, 255);
+           color:rgb(0, 0, 0);
+           margin-top:14px;
+           margin-bottom:14px;
+           padding-top: 6px;
+           padding-bottom:6px;
+           padding-right: 60px;
+           padding-left:23px;
+           background-color:rgb(255, 255, 255);
+           font-size: 15px;
+           text-decoration: none;
+       }
+       .mobilenav-content a:hover{
+           color:rgb(0, 0, 0);
+           border-right:3px solid rgb(255, 255, 255);
+       }
+        a.act{
+           background-color: rgb(255, 255, 255);
+           color:deepskyblue;
+        }
+        .mobilenav-content .cross{
+            top:0px;
+            right:0px;
+            position:absolute;
+            font-size: 20px;
+            
+        }
+        .img{
+            position:absolute;
+            float: right;
+            margin-left: 45%;
+            margin-top: 0px;
+            width:80px;
+            height:auto; 
+         }
+       header{
+           display:none;
+       }
+  }
+  /* footer */
+  .footer1{
+    background-color: rgb(36, 35, 35);
+    padding:2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 93.8vw;
+}
+.footer1 ul {
+    display: flex;
+    margin: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.footer1 ul li{
+    list-style: none;
+    padding:1rem;
+
+}
+.footer1 ul li a{
+    text-decoration: none;
+    font-size: 1.2rem;
+    color:white;
+    text-transform: capitalize;
+}
+.footer1 ul li a:hover{
+    color:rgb(20, 111, 230);
+}
+.footer1 p{
+    margin:1rem;
+    color:grey;
+}
+.footer2{
+    display:flex;
+    flex-direction: column;
+    padding:2rem;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color:white;
+}
+.footer2 h1{
+    font-size: 4rem;
+}
+.footer2 p{
+    color:beige;
+    margin:1rem;
+}
+.images{
+    display: flex;
+    width:60%;
+
+    align-items: center;
+    justify-content: center;
+}
+.logos{
+    margin:1.5rem;
+    text-align: center;
+    
+}
+
+.logos img{
+    width:100px;
+    opacity: 0.4;
+    cursor: pointer;
+}
+.logos img:hover{
+    opacity:1;
+}
+    .coros{
+        opacity: 0.5;
+    }
+    .coros:hover{
+        opacity: 1;
+        cursor: pointer;
+    }
+                
+    </style>
+    <script>
+        const openNav = ()=>{
+            document.getElementById('mobilenav').style.width = '100%'
+            document.getElementById('mobilenav').style.height = '100%'
+
+        }
+        const closeNav = ()=>{
+            document.getElementById('mobilenav').style.width = '0%'        }
+    </script>
+</head>
+<body>
+    <header class="header"><a><img src="1594px-Cartoon_Network_2010_logo.svg.png" alt="" ></a>
+        <span id="home" >
+            <div class="mobilenav" id="mobilenav">
+                 <button onclick="closeNav()" class="cross" title="btn" ><i class="fa fa-times "target="_blank "></i></button>   
+                <div class="mobilenav-content">
+                    <a href="#">HOME</a> <br> 
+                    <a href="#">SCHEDULE</a> <br>
+                    <a href="#">WATCH</a> <br>
+                    <a href="#">CONTESTS</a> <br>
+                </div>
+            </div>
+        <button  onclick="openNav()" id="btn"  ><i class="fa fa-bars "target="_blank ">  MENU</i></button> 
+        
+      </span>
+        
+        <nav class="nav">
+            <a href="" >Home</a>
+            <a href="">Schedule</a>
+            <a href="">Where to watch</a>
+            <a href="">contest</a>
+        </nav>
+    </header> <br> <hr>
+    <div class="body">
+        <br><br><br>
+        <div class="container"><div class="about"><h1>Featured</h1><br>
+    <div class="container">
+        
+        
+            <div class="card"><div class="image"> <img src="CartoonNetwork_Ben10_462x386.jpg" alt=""><div class="name"><h4>BEN 10 <br><p> Weekdays 8:30pm ET/PT  &#9656</p></h4></div></div></div>
+            <div class="card"><div class="image"> <img src="CartoonNetwork_OKKO_462x386.jpg"  alt=""><div class="name"><h4>OK ko! let's be heros <br><p>Weekends 8:30pm ET/PT  &#9656</p></h4></div></div></div>
+            <div class="card"><div class="image"> <div class="name"></div></div></div> <br>
+            
+        
+    </div>
+    <div class="container2">
+        <div class="card2"><div class="image2"> <img src="CartoonNetwork_StevenUniverse_462x386.jpg" width="300px" height="300px" alt=""><div class="name"><h4>steven universe <br><p>Weekends 11:30am ET/PT &#9656</p></h4></div></div></div>
+        <div class="card2"><div class="image2"> <img src="We-Bare-Bears-Movie.png" width="300px" height="300px" alt=""> <div class="name"><h4>we bare bears <br><p>Weekdays 6:00pm ET/PT &#9656</p></h4></div></div></div>
+        <div class="card2"><div class="image2"><img src="ppg.jpg" width="300px" height="300px" alt=""> <div class="name"><h4>the powerpuff girls <br><p>Everyday 7:00 am ET/PT &#9656</p></h4></div></div></div>
+        <div class="card2"><div class="image2"><img src="rgshow.jpg" width="300px" height="300px" alt=""> <div class="name"><h4>the regular show<br><p>Weekends 7:00pm ET/PT &#9656</p></h4></div></div></div>
+    </div>
+    <div class="container2"> 
+        <div class="card2"><div class="image2"><img src="advtikme.jpg" width="300px" height="300px" alt=""> <div class="name"><h4>adventure time</h4><p>Weekends 7:00pm ET/PT &#9656</p></div></div></div>
+        <div class="card2"><div class="image2"><img src="appandoni.jpg" width="300px" height="300px" alt=""> <div class="name"><h4>apple and onion <br><p>Weekends 7:00pm ET/PT &#9656</p></h4></div></div></div>
+        <div class="card2"><div class="image2"><img src="mao.png" width="300px" height="300px" alt=""> <div class="name"><h4>mao mao:hero of pure heart <br><p>Weekends 7:00pm ET/PT &#9656</p></h4></div></div></div>
+        <div class="card2"><div class="image2"><img src="gum.jpg" width="300px" height="300px" alt=""> <div class="name"><h4>amazing world of gumball <br><p>Weekends 7:00pm ET/PT &#9656</p></h4></div></div></div>
+</div> <br><br>
+        <div class="container">
+            <div class="about">
+                <h1>About cartoon network</h1><br><p>Cartoon Network (Canada) is the destination for kids and families seeking hilarious animation. Cartoon Network is the funny and  unexpected brand that <br>stands out the pack in a way that kids can relate. </p><br>
+        <h1>Contact Us</h1> <br> <p>We want to hear from you! To share your feedback, please email us at info@cartoonnetwork.ca</p></div>
+
+        </div>
+        </div> 
+    
+  
+    <!-- footer -->
+    <div class="container">
+    <div class="footer1">
+        <ul>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Privacy policy</a></li>
+            <li><a href="#">Terms of use</a></li>
+            <li><a href="#">Advertising standard terms</a></li>
+            <li><a href="#">Subscribe to channel</a></li>
+        </ul>
+        <p>© 2021 Corus Entertainment Inc. All rights reserved. Corus Television.</p>
+    </div>
+    </div>
+
+    <div class="footer2">
+        <a class="coros"><h1>coros.</h1> </a>
+        <p>Other Corus Kids Websites</p>
+        <div class="images">
+          <div class="logos first">
+              <img src="image.png">
+          </div>
+          <div class="logos second">
+            <img src= "disneyj.jpg">
+        </div>
+        <div class="logos third">
+            <img src="ttoon.jpg">
+        </div>
+        <div class="logos  fourth">
+            <img src="ytv.jpg">
+        </div>
+        <div class="logos fifth ">
+            <img src="trehouse.jpg">
+        </div>
+        </div>
+    </div>
+</body>
+
+
+
+
+</html>
